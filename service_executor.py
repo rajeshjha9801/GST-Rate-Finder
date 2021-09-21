@@ -8,7 +8,7 @@ import traceback
 def hsn_to_df(hsn,desc,db_path):
     try:
         if db_path:
-            hsn_dict_load=load_pickle_file(db_path+"\\"+'service_hsn_dict.pkl')
+            hsn_dict_load=load_pickle_file(db_path+"//"+'service_hsn_dict.pkl')
         else:
 
             hsn_dict_load=load_pickle_file(f'service_hsn_dict.pkl')
@@ -132,7 +132,7 @@ def hsn_to_df(hsn,desc,db_path):
 def bulk_processing(file,db_path):
     try:
         if db_path:
-            hsn_dict_load=load_pickle_file(db_path+"\\"+'service_hsn_dict.pkl')
+            hsn_dict_load=load_pickle_file(db_path+"//"+'service_hsn_dict.pkl')
         else:
 
             hsn_dict_load=load_pickle_file(f'service_hsn_dict.pkl')
