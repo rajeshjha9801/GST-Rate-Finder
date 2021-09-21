@@ -156,7 +156,7 @@ def main(db_path):
             hsn_dict[df_final["Chapter"][i]]["DrillDown"]=None
             
     if db_path:
-        write_pickle_file(hsn_dict,db_path+"\\"+'hsn_dict.pkl')
+        write_pickle_file(hsn_dict,db_path+"//"+'hsn_dict.pkl')
     else:
         write_pickle_file(hsn_dict,f'hsn_dict.pkl')
 
