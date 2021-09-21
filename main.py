@@ -118,7 +118,7 @@ def main():
 
             rate_derived=service_executor.bulk_processing(uploaded_file.name,db_path)
             dt_string = now.strftime("_%d_%m_%Y_%H%M%S")
-            downloadfolder=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
+            downloadfolder=os.getcwd()
             OutPutFileName = "//"+"Service_Bulk_upload_rate_derived"+"_"+dt_string+".xlsx"      
             rate_derived.to_csv(downloadfolder+OutPutFileName,index=None)
             with open(downloadfolder+OutPutFileName) as f:
