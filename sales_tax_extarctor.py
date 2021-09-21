@@ -29,8 +29,8 @@ import sqlite3
 from sqlalchemy import create_engine
 import shutil
 def main():
-    database_path=os.path.join(os.getcwd()+"\\"+"DB")
-    pickle_path=os.path.join(os.getcwd()+"\\"+"pickles")
+    database_path=os.path.join(os.getcwd()+"//"+"DB")
+    pickle_path=os.path.join(os.getcwd()+"//"+"pickles")
     db_engine=create_engine('sqlite:///ratemaster.db')
 
     url = 'http://www.salestaxindia.com/login.aspx'
