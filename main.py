@@ -25,7 +25,7 @@ def main():
     st.title("GST Rate Finder")
     st.sidebar.title("Parameter Selectors")
     st.sidebar.markdown("Select the Period")
-    database_path=os.path.join(os.getcwd()+"\\"+"DB")
+    database_path=os.path.join(os.getcwd()+"\"+"DB")
     folder_lst=list(os.listdir(database_path))
 
     folder_lst.append("Real Time")
@@ -37,13 +37,13 @@ def main():
 
     select = st.sidebar.selectbox('Select the Database',folder_lst)
     if select!="Real Time":
-        if os.path.exists(database_path+"//"+select):
-            db_path=database_path+"//"+str(select)
+        if os.path.exists(database_path+"\"+select):
+            db_path=database_path+"\"+str(select)
             pass
         else:
             
             sales_tax_extarctor.main()
-            db_path=database_path+"//"+str(select)
+            db_path=database_path+"\"+str(select)
             aggregator.main(db_path)
             service_aggregator.main(db_path)
 
@@ -73,7 +73,7 @@ def main():
                 df_single=df
                 # dt_string = now.strftime("_%d_%m_%Y_%H%M%S")
                 # downloadfolder=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
-                # OutPutFileName = "\\"+"Goods_"+text_input+"_"+dt_string+".xlsx"      
+                # OutPutFileName = "\"+"Goods_"+text_input+"_"+dt_string+".xlsx"      
                 # df.to_csv(downloadfolder+OutPutFileName,index=None)
                 # with open(downloadfolder+OutPutFileName) as f:
                 #     file=f.read()
@@ -89,7 +89,7 @@ def main():
     now = datetime.now()
     dt_string = now.strftime("_%d_%m_%Y_%H%M%S")
     downloadfolder=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
-    OutPutFileName = "\\"+text_input+"_"+dt_string+".xlsx"      
+    OutPutFileName = "\"+text_input+"_"+dt_string+".xlsx"      
     df_single.to_csv(downloadfolder+OutPutFileName,index=None)
     with open(downloadfolder+OutPutFileName) as f:
         file=f.read()
@@ -107,7 +107,7 @@ def main():
             rate_derived=executor.bulk_processing(uploaded_file.name,db_path)
             dt_string = now.strftime("_%d_%m_%Y_%H%M%S")
             downloadfolder=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
-            OutPutFileName = "\\"+"Goods_Bulk_upload_rate_derived"+"_"+dt_string+".xlsx"      
+            OutPutFileName = "\"+"Goods_Bulk_upload_rate_derived"+"_"+dt_string+".xlsx"      
             rate_derived.to_csv(downloadfolder+OutPutFileName,index=None)
             with open(downloadfolder+OutPutFileName) as f:
                 file=f.read()
@@ -119,7 +119,7 @@ def main():
             rate_derived=service_executor.bulk_processing(uploaded_file.name,db_path)
             dt_string = now.strftime("_%d_%m_%Y_%H%M%S")
             downloadfolder=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
-            OutPutFileName = "\\"+"Service_Bulk_upload_rate_derived"+"_"+dt_string+".xlsx"      
+            OutPutFileName = "\"+"Service_Bulk_upload_rate_derived"+"_"+dt_string+".xlsx"      
             rate_derived.to_csv(downloadfolder+OutPutFileName,index=None)
             with open(downloadfolder+OutPutFileName) as f:
                 file=f.read()
