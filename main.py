@@ -88,7 +88,7 @@ def main():
                 df_single=df                
     now = datetime.now()
     dt_string = now.strftime("_%d_%m_%Y_%H%M%S")
-    downloadfolder=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Downloads')
+    downloadfolder=os.getcwd()
     OutPutFileName = "//"+text_input+"_"+dt_string+".xlsx"      
     df_single.to_csv(downloadfolder+OutPutFileName,index=None)
     with open(downloadfolder+OutPutFileName) as f:
