@@ -50,9 +50,9 @@ def main():
     driver.implicitly_wait(10)
 
 
-    driver.find_element_by_xpath('//*[@id="Login1_UserName"]').send_keys('PuneInstavat')
+    driver.find_element_by_xpath('//*[@id="Login1_UserName"]').send_keys('demo')
 
-    driver.find_element_by_xpath('//*[@id="Login1_Password"]').send_keys('pung$t9')
+    driver.find_element_by_xpath('//*[@id="Login1_Password"]').send_keys('demo')
     driver.find_element_by_xpath('//*[@id="Login1_LoginButton"]').click()
     driver.implicitly_wait(5)
 
