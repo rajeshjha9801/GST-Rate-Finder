@@ -1,0 +1,5 @@
+[global]
+developmentMode = true
+
+[server]
+port = 80
